@@ -2,10 +2,9 @@ import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import './.env';
+import 'dotenv/config';
 
 import { schema } from './schema/schema';
-
 const app = express();
 
 app.use(cors());
