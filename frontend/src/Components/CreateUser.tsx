@@ -8,7 +8,6 @@ function CreateUser() {
     const [password, setPassword] = useState('');
 
     const [createUser, { error, loading, data }] = useMutation(CREATE_USER)
-    console.log(error, loading, data)
 
     return (
         <div className="createUser">

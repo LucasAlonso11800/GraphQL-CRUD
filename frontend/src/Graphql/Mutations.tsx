@@ -17,15 +17,29 @@ export const CREATE_USER = gql`
     }
 `;
 
-export const DELETE_USER = gql`
+export const UPDATE_PASSWORD = gql`
     mutation(
-        $id: ID! 
+        $username: String! 
+        $oldPassword: String! 
+        $newPassword: String!
         ) {
-        createUser(
-            id: $id 
+        editUser(
+            username: $username 
+            oldPassword: $oldPassword 
+            newPassword: $newPassword
             ) {
                 successful
                 message
+        }
+    }
+`;
+
+
+export const DELETE_USER = gql`
+    mutation($id: ID!) {
+        deleteUser(id: $id) {
+            successful
+            message
         }
     }
 `;

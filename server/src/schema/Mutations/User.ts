@@ -42,7 +42,7 @@ export const DELETE_USER = {
 };
 
 export const EDIT_USER = {
-    type: UserType,
+    type: MessageType,
     args: {
         username: { type: GraphQLString },
         oldPassword: { type: GraphQLString },
@@ -50,7 +50,6 @@ export const EDIT_USER = {
     },
     async resolve(parent: any, args: any) {
         const { username, oldPassword, newPassword } = args;
-
         try {
             await User.updateOne(
                 { username, password: oldPassword },
